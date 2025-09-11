@@ -1,0 +1,21 @@
+.grad {
+  background: #e0e7ff;
+  /* background: #ACC2EE;
+background: linear-gradient(9deg, rgba(172, 194, 238, 1) 0%, rgba(248, 190, 190, 1) 50%, rgba(203, 233, 228, 1) 100%); */
+
+}
+.button {
+  background: white;
+  color: #2c0600;
+  margin: 2px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 7px;
+  border: none; /* optional, makes button look cleaner */
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  background: white;     /* explicitly keep background white */
+  color: #2c0600;         /* explicitly keep text color */
+}
