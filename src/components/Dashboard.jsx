@@ -1,4 +1,4 @@
-import style from "./Dashboard.module.css";
+import style from "./DashBoard.module.css";
 import { ImCancelCircle } from "react-icons/im";
 import { SiTicktick } from "react-icons/si";
 import { useContext } from "react";
