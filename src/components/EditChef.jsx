@@ -24,7 +24,7 @@ const EditChef = () => {
     e.preventDefault();
     fetch("https://serverofchefbooking.onrender.com/updateChefData", {
       method: "POST",
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         Name: Name.current.value,
         Type: Type.current.value,
         Price: Price.current.value,
@@ -33,8 +33,8 @@ const EditChef = () => {
         Experience: Experience.current.value,
         Certifications: Certifications.current.value,
       }),
-      headers:{
-        "Content-Type":"application/json"
+      headers: {
+        "Content-Type": "application/json",
       },
 
       credentials: "include",

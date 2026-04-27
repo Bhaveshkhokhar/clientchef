@@ -18,7 +18,7 @@ const Dashboard = () => {
   let data = [...bookinghistory];
   bookings.forEach((booking) => {
     data.push({
-      id:booking.id,
+      id: booking.id,
       name: booking.user.name,
       date: booking.date,
       time: booking.time,
@@ -38,15 +38,15 @@ const Dashboard = () => {
       <div style={{ margin: "5px" }}>
         <div className={style.boxes}>
           <div className={style.data}>
-            <img src="https://serverofchefbooking.onrender.com/money.webp" alt="Money" />
+            <img src="https://chefwale.s3.us-west-2.amazonaws.com/public/money.webp" alt="Money" />
             <span>₹ {money} </span>
           </div>
           <div className={style.data}>
-            <img src="https://serverofchefbooking.onrender.com/completed.png" alt="Completed" />
+            <img src="https://chefwale.s3.us-west-2.amazonaws.com/public/completed.png" alt="Completed" />
             <span>{completed} Booking</span>
           </div>
           <div className={style.data}>
-            <img src="https://serverofchefbooking.onrender.com/pending.png" alt="Pending" />
+            <img src="https://chefwale.s3.us-west-2.amazonaws.com/public/pending.png" alt="Pending" />
             <span>{noOfPending} Booking</span>
           </div>
         </div>
@@ -65,7 +65,7 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.slice(0,10).map((booking, index) => (
+                  {data.slice(0, 10).map((booking, index) => (
                     <tr key={index}>
                       <td>{booking.date}</td>
                       <td>
@@ -76,37 +76,57 @@ const Dashboard = () => {
                       <td>{booking.modeOfPayment}</td>
 
                       <td>
-                        {booking.status==="cancelled"&&
-                        <span style={{color:"red"}}>Cancelled</span>}
-                        {booking.status==="Completed"&&
-                        <span style={{color:"green"}}>Completed</span>}
-                        {booking.status==="pending"&&
-                        <div style={{ display: "flex", justifyContent:"space-evenly" }}>
-                          <button
+                        {booking.status === "cancelled" && (
+                          <span style={{ color: "red" }}>Cancelled</span>
+                        )}
+                        {booking.status === "Completed" && (
+                          <span style={{ color: "green" }}>Completed</span>
+                        )}
+                        {booking.status === "pending" && (
+                          <div
                             style={{
-                              border: "none",
-                              background: "white",
-                              color: "red",
-                            }}
-                            onClick={() => {
-                              updateBooking(booking.id, "cancelled",booking.date,booking.time,booking.bookedAt);
+                              display: "flex",
+                              justifyContent: "space-evenly",
                             }}
                           >
-                            <ImCancelCircle />
-                          </button>
-                          <button
-                            style={{
-                              border: "none",
-                              background: "white",
-                              color: "green",
-                            }}
-                            onClick={() => {
-                              updateBooking(booking.id, "Completed",booking.date,booking.time,booking.bookedAt);
-                            }}
-                          >
-                            <SiTicktick />
-                          </button>
-                        </div>}
+                            <button
+                              style={{
+                                border: "none",
+                                background: "white",
+                                color: "red",
+                              }}
+                              onClick={() => {
+                                updateBooking(
+                                  booking.id,
+                                  "cancelled",
+                                  booking.date,
+                                  booking.time,
+                                  booking.bookedAt,
+                                );
+                              }}
+                            >
+                              <ImCancelCircle />
+                            </button>
+                            <button
+                              style={{
+                                border: "none",
+                                background: "white",
+                                color: "green",
+                              }}
+                              onClick={() => {
+                                updateBooking(
+                                  booking.id,
+                                  "Completed",
+                                  booking.date,
+                                  booking.time,
+                                  booking.bookedAt,
+                                );
+                              }}
+                            >
+                              <SiTicktick />
+                            </button>
+                          </div>
+                        )}
                       </td>
                     </tr>
                   ))}

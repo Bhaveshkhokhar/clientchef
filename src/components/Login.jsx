@@ -5,7 +5,7 @@ import { authContext } from "../store/authStore";
 const Login = () => {
   const { handleuserProfile } = useContext(authContext);
   const rememberMe = useRef();
-  const Chefnumber= useRef();
+  const Chefnumber = useRef();
   const Password = useRef();
   const navigate = useNavigate();
   const handlelogin = (event) => {
@@ -82,7 +82,7 @@ const Login = () => {
           >
             <div className="w-100 d-flex justify-content-center mt-4 mb-0 ">
               <img
-                src="https://serverofchefbooking.onrender.com/Chefwalelogo.png"
+                src="https://chefwale.s3.us-west-2.amazonaws.com/public/Chefwalelogo.png"
                 alt="ChefWale Logo"
                 style={{ width: "90px", height: "90px", objectFit: "contain" }}
               />
@@ -110,7 +110,6 @@ const Login = () => {
                     placeholder="Mobile Number"
                     required
                   />{" "}
-                  
                 </div>{" "}
                 <div className=" mb-3">
                   {" "}
@@ -122,7 +121,6 @@ const Login = () => {
                     placeholder="Password"
                     required
                   />{" "}
-                  
                 </div>{" "}
                 <div className="form-check text-start my-3">
                   {" "}

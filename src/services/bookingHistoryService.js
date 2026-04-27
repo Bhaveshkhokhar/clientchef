@@ -1,9 +1,12 @@
-const getBookingHistory = async (signal,handleuserProfile) => {
+const getBookingHistory = async (signal, handleuserProfile) => {
   try {
-    const response = await fetch("https://serverofchefbooking.onrender.com/getchefBookingHistory", {
-      signal,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://serverofchefbooking.onrender.com/getchefBookingHistory",
+      {
+        signal,
+        credentials: "include",
+      },
+    );
 
     const data = await response.json();
 
@@ -14,7 +17,7 @@ const getBookingHistory = async (signal,handleuserProfile) => {
       }
       if (response.status === 404) {
         handleuserProfile(false);
-        return ;
+        return;
       }
       if (response.status === 500) {
         alert(data.message);
@@ -31,12 +34,12 @@ const getBookingHistory = async (signal,handleuserProfile) => {
 const mapServerBookingHistToLocaBookingHist = (bookings) => {
   return bookings.map((booking) => {
     return {
-     name:booking.name,
-     date:booking.date,
-     time:booking.time,
-     fees:booking.price,
-     modeOfPayment:booking.modeOfPayment,
-     status:booking.status,
+      name: booking.name,
+      date: booking.date,
+      time: booking.time,
+      fees: booking.price,
+      modeOfPayment: booking.modeOfPayment,
+      status: booking.status,
     };
   });
 };

@@ -19,7 +19,7 @@ const BookingContextProvider = ({ children }) => {
     setBooking(bookingdata);
   };
 
-  const updateBooking = (id, action, date, time,bookedAt) => {
+  const updateBooking = (id, action, date, time, bookedAt) => {
     fetch("https://serverofchefbooking.onrender.com/chefbookingupdate", {
       credentials: "include",
       method: "POST",
@@ -28,7 +28,7 @@ const BookingContextProvider = ({ children }) => {
         action,
         date,
         time,
-        bookedAt
+        bookedAt,
       }),
       headers: {
         "Content-Type": "application/json",

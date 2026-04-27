@@ -1,9 +1,12 @@
-const getTheChefBookings = async (signal,handleuserProfile) => {
+const getTheChefBookings = async (signal, handleuserProfile) => {
   try {
-    const response = await fetch("https://serverofchefbooking.onrender.com/get-Chefbookings", {
-      signal,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://serverofchefbooking.onrender.com/get-Chefbookings",
+      {
+        signal,
+        credentials: "include",
+      },
+    );
     const data = await response.json();
     if (!response.ok) {
       if (response.status === 401) {
@@ -12,7 +15,7 @@ const getTheChefBookings = async (signal,handleuserProfile) => {
       }
       if (response.status === 404) {
         handleuserProfile(false);
-        return ;
+        return;
       }
       if (response.status === 500) {
         alert(data.message);
@@ -29,14 +32,14 @@ const getTheChefBookings = async (signal,handleuserProfile) => {
 const mapServerbookingToLocalbooking = (bookings) => {
   return bookings.map((booking) => {
     return {
-      bookedAt:booking.bookedAt,
-      id:booking.id,
-      time:booking.time,
-      date:booking.date,
-      fees:booking.price,
-      address:booking.address,
-      modeOfPayment:booking.modeOfPayment,
-      user:booking.user,
+      bookedAt: booking.bookedAt,
+      id: booking.id,
+      time: booking.time,
+      date: booking.date,
+      fees: booking.price,
+      address: booking.address,
+      modeOfPayment: booking.modeOfPayment,
+      user: booking.user,
     };
   });
 };
