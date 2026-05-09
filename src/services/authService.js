@@ -1,13 +1,12 @@
+import { BACKEND_URL } from "../config";
+
 export const checkAuthStatus = async (signal) => {
   try {
-    const response = await fetch(
-      "https://serverofchefbooking.onrender.com/chefcheckauthstatus",
-      {
-        method: "GET",
-        credentials: "include",
-        signal,
-      },
-    );
+    const response = await fetch(`${BACKEND_URL}/chefcheckauthstatus`, {
+      method: "GET",
+      credentials: "include",
+      signal,
+    });
     if (!response.ok) {
       if (response.status === 401) {
         return { isLoggedIn: false };

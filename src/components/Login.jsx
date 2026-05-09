@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { useContext, useRef } from "react";
 import { authContext } from "../store/authStore";
+import { BACKEND_URL } from "../config";
 const Login = () => {
   const { handleuserProfile } = useContext(authContext);
   const rememberMe = useRef();
@@ -11,7 +12,7 @@ const Login = () => {
   const handlelogin = (event) => {
     // validate  number
     event.preventDefault();
-    fetch("https://serverofchefbooking.onrender.com/cheflogin", {
+    fetch(`${BACKEND_URL}/cheflogin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

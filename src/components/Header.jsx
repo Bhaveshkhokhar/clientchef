@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { useContext, useState } from "react";
 import { authContext } from "../store/authStore";
+import { BACKEND_URL } from "../config";
 const Header = () => {
   const { handleuserProfile } = useContext(authContext);
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Header = () => {
   const handlesignout = (e) => {
     // e.preventDefault();
 
-    fetch("https://serverofchefbooking.onrender.com/cheflogout", {
+    fetch(`${BACKEND_URL}/cheflogout`, {
       method: "POST",
       credentials: "include",
     })

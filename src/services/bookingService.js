@@ -1,12 +1,11 @@
+import { BACKEND_URL } from "../config";
+
 const getTheChefBookings = async (signal, handleuserProfile) => {
   try {
-    const response = await fetch(
-      "https://serverofchefbooking.onrender.com/get-Chefbookings",
-      {
-        signal,
-        credentials: "include",
-      },
-    );
+    const response = await fetch(`${BACKEND_URL}/get-Chefbookings`, {
+      signal,
+      credentials: "include",
+    });
     const data = await response.json();
     if (!response.ok) {
       if (response.status === 401) {

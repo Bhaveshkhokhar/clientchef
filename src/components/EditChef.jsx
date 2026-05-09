@@ -4,6 +4,7 @@ import style from "./EditChef.module.css";
 import { useRef } from "react";
 import { ChefStore } from "../store/ChefdataStore";
 import { authContext } from "../store/authStore";
+import { BACKEND_URL } from "../config";
 const EditChef = () => {
   const navigate = useNavigate();
   const { handleuserProfile } = useContext(authContext);
@@ -22,7 +23,7 @@ const EditChef = () => {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    fetch("https://serverofchefbooking.onrender.com/updateChefData", {
+    fetch(`${BACKEND_URL}/updateChefData`, {
       method: "POST",
       body: JSON.stringify({
         Name: Name.current.value,

@@ -1,0 +1,215 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: #e0e7ff;
+  border-radius: 28px;
+  padding: 1rem;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0.75rem auto 0;
+  max-width: 640px;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.input:disabled,
+.select:disabled,
+.textarea:disabled {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.textarea {
+  resize: vertical;
+  
+}
+
+.otpRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.numberRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.otpButton,
+.verifyButton,
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verifiedBadge {
+  align-self: center;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  text-align: center;
+  width: fit-content;
+}
+
+.profileRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.profilePreview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  background: #f8fafc;
+}
+
+.fileInput {
+  width: 100%;
+  max-width: 250px;
+  padding: 0.7rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: #1e293b;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.otpButton,
+.verifyButton,
+.submitBtn {
+  height: 2.65rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.otpButton,
+.submitBtn,.verifyButton {
+  background: #ffffff;
+  color: #2c0600;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.otpButton:hover,
+.submitBtn:hover,
+.verifyButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+
+.statusRow {
+  margin-top: 0.5rem;
+  min-height: 2rem;
+}
+
+.message {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.success {
+  color: #0f766e;
+}
+
+@media (min-width: 640px) {
+  .otpRow {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  .verifyArea {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .card {
+    padding: 1.5rem;
+  }
+}

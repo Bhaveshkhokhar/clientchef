@@ -4,6 +4,7 @@ import { ChefStore } from "../store/ChefdataStore";
 import { useNavigate, Navigate, useLocation } from "react-router-dom";
 import { useState, useRef, useContext, useEffect } from "react";
 import { authContext } from "../store/authStore";
+import { BACKEND_URL } from "../config";
 
 const ChefProfile = () => {
   const { chef, updateProfilePic } = useContext(ChefStore);
@@ -22,7 +23,7 @@ const ChefProfile = () => {
     if (selectedFile) {
       const formData = new FormData();
       formData.append("image", selectedFile);
-      fetch("https://serverofchefbooking.onrender.com/updateChefProfilePic", {
+      fetch(`${BACKEND_URL}/updateChefProfilePic`, {
         method: "POST",
         body: formData,
         credentials: "include",

@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import getTheChefBookings from "../services/bookingService";
 import { authContext } from "./authStore";
 import { bookingHistoryContext } from "./bookingHistoryStore";
+import { BACKEND_URL } from "../config";
 
 export const bookingContext = createContext({
   bookings: [],
@@ -20,7 +21,7 @@ const BookingContextProvider = ({ children }) => {
   };
 
   const updateBooking = (id, action, date, time, bookedAt) => {
-    fetch("https://serverofchefbooking.onrender.com/chefbookingupdate", {
+    fetch(`${BACKEND_URL}/chefbookingupdate`, {
       credentials: "include",
       method: "POST",
       body: JSON.stringify({

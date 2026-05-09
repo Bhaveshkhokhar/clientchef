@@ -12,6 +12,7 @@ import Booking from "./components/Booking.jsx";
 import EditChef from "./components/EditChef.jsx";
 import ChefProfile from "./components/ChefProfile.jsx";
 import BookingHistory from "./components/BookingHistory.jsx";
+import RequestPage from "./components/RequestPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,12 @@ const router = createBrowserRouter([
           { path: "/chefProfile", element: <ChefProfile /> },
           { path: "/editProfile", element: <EditChef /> },
           { path: "/pastBookings", element: <BookingHistory /> },
+          
         ],
       },
       { path: "/login", element: <Login /> },
       { path: "/unauthorized", element: <LoginRequiredMessage /> },
+      {path: "/request",element :<RequestPage/>},
     ],
   },
 ]);
