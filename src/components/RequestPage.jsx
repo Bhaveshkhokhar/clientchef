@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./RequestPage.module.css";
-import { BACKEND_URL } from "../config";
+import { BACKEND_URL, S3_BASE_URL } from "../config";
 
 export default function RequestPage() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function RequestPage() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [previewImg, setPreviewImg] = useState(
-    "https://chefwale.s3.us-west-2.amazonaws.com/public/defaultpic.jpg",
+    `${S3_BASE_URL}/public/defaultpic.jpg`,
   );
   const [selectedFile, setSelectedFile] = useState(null);
   const [name, setName] = useState("");
@@ -162,13 +162,13 @@ export default function RequestPage() {
           <h1 className={style.title}>Chef Request</h1>
           {otpVerified && (
             <p className={style.subtitle}>Phone Number Verified</p>
-          )}{
-            !otpVerified&&(<p className={style.subtitle}>
-            Verify your mobile number first, then complete your chef request
-            details.
-          </p>)
-          }
-          
+          )}
+          {!otpVerified && (
+            <p className={style.subtitle}>
+              Verify your mobile number first, then complete your chef request
+              details.
+            </p>
+          )}
         </div>
 
         <form

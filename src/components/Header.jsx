@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import { useContext, useState } from "react";
 import { authContext } from "../store/authStore";
-import { BACKEND_URL } from "../config";
+import { BACKEND_URL, S3_BASE_URL } from "../config";
 const Header = () => {
   const { handleuserProfile } = useContext(authContext);
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ const Header = () => {
             <img
               width="50px"
               height="50px"
-              src="https://chefwale.s3.us-west-2.amazonaws.com/public/Chefwalelogo.png"
+              src={`${S3_BASE_URL}/public/Chefwalelogo.png`}
               alt="ChefWale"
             />
           </Link>

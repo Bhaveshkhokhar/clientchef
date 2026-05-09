@@ -4,6 +4,7 @@ import { SiTicktick } from "react-icons/si";
 import { useContext } from "react";
 import { bookingContext } from "../store/bookingStore";
 import { bookingHistoryContext } from "../store/bookingHistoryStore";
+import { S3_BASE_URL } from "../config";
 const Dashboard = () => {
   const { bookings, updateBooking } = useContext(bookingContext);
   const { bookinghistory } = useContext(bookingHistoryContext);
@@ -38,15 +39,15 @@ const Dashboard = () => {
       <div style={{ margin: "5px" }}>
         <div className={style.boxes}>
           <div className={style.data}>
-            <img src="https://chefwale.s3.us-west-2.amazonaws.com/public/money.webp" alt="Money" />
+            <img src={`${S3_BASE_URL}/public/money.webp`} alt="Money" />
             <span>₹ {money} </span>
           </div>
           <div className={style.data}>
-            <img src="https://chefwale.s3.us-west-2.amazonaws.com/public/completed.png" alt="Completed" />
+            <img src={`${S3_BASE_URL}/public/completed.png`} alt="Completed" />
             <span>{completed} Booking</span>
           </div>
           <div className={style.data}>
-            <img src="https://chefwale.s3.us-west-2.amazonaws.com/public/pending.png" alt="Pending" />
+            <img src={`${S3_BASE_URL}/public/pending.png`} alt="Pending" />
             <span>{noOfPending} Booking</span>
           </div>
         </div>

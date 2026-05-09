@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { useContext, useRef } from "react";
 import { authContext } from "../store/authStore";
-import { BACKEND_URL } from "../config";
+import { BACKEND_URL, S3_BASE_URL } from "../config";
 const Login = () => {
   const { handleuserProfile } = useContext(authContext);
   const rememberMe = useRef();
@@ -83,7 +83,7 @@ const Login = () => {
           >
             <div className="w-100 d-flex justify-content-center mt-4 mb-0 ">
               <img
-                src="https://chefwale.s3.us-west-2.amazonaws.com/public/Chefwalelogo.png"
+                src={`${S3_BASE_URL}/public/Chefwalelogo.png`}
                 alt="ChefWale Logo"
                 style={{ width: "90px", height: "90px", objectFit: "contain" }}
               />
